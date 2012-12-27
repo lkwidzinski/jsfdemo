@@ -2,25 +2,50 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-  <div>
-	<h:form>
-	  <ul>
-		<li>
-		  <h:commandLink action="home?faces-redirect=true">
-			<h:outputText value="#{msg.linkHome}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="add?faces-redirect=true">
-			<h:outputText value="#{msg.personAddLabel}" />
-		  </h:commandLink></li>
-		<li>
-		  <h:commandLink action="showPersons?faces-redirect=true">
-			 <h:outputText value="#{msg.personAllLabel}" />
-		  </h:commandLink>
-		</li>
-	</ul>
-   </h:form>
-  </div>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+    	<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br>
+		<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br> 
+		<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br>
+		<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br> 
+		<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br> 
+		<br>
+        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+    		<f:param name="productId" value="20" />  
+		</p:button> 
+		</br>
+		<br/><br/>
+	<h:form align="bottom">  
+  
+    	<p:growl id="messages"/>  
+  
+    	<p:splitButton value="Save" actionListener="#{buttonBean.save}" update="messages" icon="ui-icon-disk">  
+       	 <p:menuitem value="Update" actionListener="#{buttonBean.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>  
+       	 <p:menuitem value="Delete" actionListener="#{buttonBean.delete}" ajax="false" icon="ui-icon-close"/>  
+       	 <p:separator />  
+      	  <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>  
+  	    </p:splitButton>  
+  
+	</h:form>     
 </ui:composition>

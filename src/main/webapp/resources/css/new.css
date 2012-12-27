@@ -1,0 +1,75 @@
+body {
+	background-image:url('http://sanghazenpt.files.wordpress.com/2011/03/sky-clouds-sky-clouds-1920x1200.jpg');
+}
+
+.mainWindow {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin-left: -400px;
+  margin-top: -300px;
+  
+  border: 1px solid black;
+  background: gray;
+  
+-moz-box-shadow: -5px -5px 5px #000,inset 0 0 5px 5px #999;
+-webkit-box-shadow: -5px -5px 5px #000,inset 0 0 5px 5px #999;
+box-shadow: -5px -5px 5px #000,inset 0 0 7px 7px #999;
+}
+
+.leftMain{
+
+	width: 550px;
+	height: 600px;
+	float: left;
+/* 	background: green; */
+}
+
+.title{
+	
+	width: 550px;
+	height: 100px;
+	float:left;
+	/* background: red; */
+}
+
+.rightMenu{
+	
+	padding-top:30px;
+	text-align:center;
+	font-size: smaller;
+	image-align:center;
+	width: 250px;
+	height: 570px;
+	float: right;
+
+/* 	background: yellow; */
+	
+}
+
+.content {
+	
+	width: 550px;
+	height: 500px;
+	float:left;
+	/* background: blue; */
+
+}
+
+.footer{
+	width: 800px;
+	height: 50px;
+	margin-top:+620px;
+	background: gray;
+
+	margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    border: 1px solid black;
+-moz-box-shadow: -5px -5px 5px #000,inset 0 0 5px 5px #999;
+-webkit-box-shadow: -5px -5px 5px #000,inset 0 0 5px 5px #999;
+box-shadow: -5px -5px 5px #000,inset 0 0 7px 7px #999;
+
+}
