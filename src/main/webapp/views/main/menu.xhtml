@@ -4,48 +4,30 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-	
-    	<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
+<h:form>
+	<br/>
+        <p:button outcome="add.xhtml" value="Search" icon="ui-icon-star">  
     		<f:param name="productId" value="20" />  
 		</p:button> 
-		</br>
-		<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
-		</p:button> 
-		</br> 
-		<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
-		</p:button> 
-		</br>
-		<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
-		</p:button> 
-		</br> 
-		<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
-		</p:button> 
-		</br> 
-		<br>
-        <p:button outcome="add.xhtml" value="With Icon" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
-		</p:button> 
-		</br>
-		<br/><br/>
-	<h:form align="bottom">  
-  
-    	<p:growl id="messages"/>  
-  
-    	<p:splitButton value="Save" actionListener="#{buttonBean.save}" update="messages" icon="ui-icon-disk">  
-       	 <p:menuitem value="Update" actionListener="#{buttonBean.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>  
-       	 <p:menuitem value="Delete" actionListener="#{buttonBean.delete}" ajax="false" icon="ui-icon-close"/>  
-       	 <p:separator />  
-      	  <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>  
-  	    </p:splitButton>  
-  
-	</h:form>     
+	<br/>
+    	<p:menuButton value="Status">  
+            <p:menuitem value="Planes" url="http://www.primefaces.org" />  
+            <p:menuitem value="Persons" url="http://www.primefaces.org/showcase/touch" />  
+        </p:menuButton>  
+     <br/>   
+        <p:menuButton value="Plane">  
+            <p:menuitem value="Add" url="http://www.primefaces.org" />  
+            <p:menuitem value="Remove"    url="http://www.primefaces.org/showcase" />  
+
+        </p:menuButton>  
+      <br/>  
+        <p:menuButton value="Passenger">  
+            <p:menuitem value="Add" url="http://www.primefaces.org" />  
+            <p:menuitem value="Remove" url="http://www.primefaces.org/showcase" />  
+            <p:menuitem value="Add to database" url="http://www.primefaces.org/showcase/touch" />  
+        </p:menuButton>  
+	<br/>
+	<br/>
+
+</h:form>
 </ui:composition>

@@ -14,15 +14,23 @@
   <h:outputStylesheet library="css" name="new.css" target="body" />
    <div class="mainWindow">
 	 	<div class="leftMain">
-	 		<div class="title"><ui:insert name="title"></ui:insert></div>
+	 		<div class="title">
+	 		<ui:insert name="title"></ui:insert></div>
 	 		<div class="content">
 	 		<ui:insert name="content"></ui:insert>
 	 		</div>
 	 	</div>
 	 	<div class="rightMenu">
-	 	<ui:insert name="rightMenu">
+	 	 <div class="background">
+	 	  <ui:insert name="rightMenu">
                <ui:include src="/views/main/menu.xhtml" />
-        </ui:insert>
+          </ui:insert>
+         </div>
+	 	 <div class="foreground">
+	 	  <ui:insert name="rightMenu">
+               <ui:include src="/views/main/menu.xhtml" />
+          </ui:insert>
+          </div>
 	 	</div>
 	<div class="footer">
 	<ui:include src="/views/main/footer.xhtml" />
