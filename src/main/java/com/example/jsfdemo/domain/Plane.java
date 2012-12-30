@@ -2,6 +2,8 @@ package com.example.jsfdemo.domain;
 
 import java.util.List;
 
+import javax.validation.constraints.Size;
+
 
 public class Plane{
 	
@@ -22,18 +24,19 @@ public class Plane{
 		
 	}
 	//get
+	@Size(min=1)
 	public String getName() {
 		return name;
 	}
-
+	@Size(min=1)
 	public String getTailNumber() {
 		return tailNumber;
 	}
-
+	@Size(min=1)
 	public int getCapacity() {
 		return capacity;
 	}
-
+	@Size(min=0)
 	public int getPassengers() {
 		return passengers;
 	}

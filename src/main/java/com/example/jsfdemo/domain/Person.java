@@ -1,11 +1,13 @@
 package com.example.jsfdemo.domain;
 
+import javax.validation.constraints.Size;
+
 public class Person {
 	
-	String firstName;
-	String lastName;
+	String firstName="";
+	String lastName="";
 	int pesel;
-	String additionalInfo;
+	String additionalInfo="";
 	
 	public Person(String firstName,String lastName, int pesel, String additionalInfo){
 		
@@ -15,7 +17,7 @@ public class Person {
 		this.additionalInfo=additionalInfo;
 		
 	}
-
+	@Size(min=3,max=20)
 	public String getFirstName() {
 		return firstName;
 	}
@@ -23,7 +25,7 @@ public class Person {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
+	@Size(min=3,max=20)
 	public String getLastName() {
 		return lastName;
 	}
@@ -31,7 +33,7 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+	@Size(min=11)
 	public int getPesel() {
 		return pesel;
 	}

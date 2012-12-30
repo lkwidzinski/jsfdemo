@@ -3,11 +3,13 @@ package com.example.jsfdemo.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import com.example.jsfdemo.domain.Person;
 import com.example.jsfdemo.domain.Plane;
 import com.example.jsfdemo.domain.PlaneInterface;
 
-
+@ApplicationScoped
 public class PlaneManager implements PlaneInterface{
 
 	private DBmanager db=DBmanager.getInstance();

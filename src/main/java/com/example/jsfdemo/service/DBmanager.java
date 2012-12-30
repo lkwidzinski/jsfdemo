@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import com.example.jsfdemo.domain.Person;
 import com.example.jsfdemo.domain.Plane;
 

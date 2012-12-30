@@ -2,9 +2,11 @@ package com.example.jsfdemo.service;
 
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import com.example.jsfdemo.domain.Person;
 import com.example.jsfdemo.domain.PersonInterface;
-
+@ApplicationScoped
 public class PersonManager implements PersonInterface{
 	
 	private DBmanager db=DBmanager.getInstance();

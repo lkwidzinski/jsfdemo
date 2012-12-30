@@ -3,11 +3,12 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	template="/templates/new.xhtml">
-	<ui:define name="title">
-		<p>Title</p>
+
+	<ui:define name="content">	
+	
+		<p:button outcome="login.xhtml" value="Login" icon="ui-icon-star"/>  
 	</ui:define>
-	<ui:define name="content">
-		<p>		Content</p>
-	</ui:define>
+
 </ui:composition>
