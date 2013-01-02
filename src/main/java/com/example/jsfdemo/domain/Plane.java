@@ -23,6 +23,9 @@ public class Plane{
 		this.readyToGo=readyToGo;
 		
 	}
+	public Plane() {
+		// TODO Auto-generated constructor stub
+	}
 	//get
 	@Size(min=1)
 	public String getName() {

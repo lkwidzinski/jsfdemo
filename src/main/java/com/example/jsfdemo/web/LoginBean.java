@@ -1,36 +1,33 @@
 package com.example.jsfdemo.web;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.RequestScoped;
-
 import javax.inject.Named;
+
+import com.example.jsfdemo.domain.Login;
 @RequestScoped
-@Named("LoginBean")
-public class LoginBean{
-	String user;
-	String password;
+@Named("loginBean")
+public class LoginBean implements Serializable {
 
-	public LoginBean(){}
+	private static final long serialVersionUID = 1L;
 
-	public String getUser(){
-		return user;
+	private Login login=new Login();
+
+	public Login getLogin() {
+		return login;
 	}
 
-	public void setUser(String loginname){
-		this.user = loginname;
+	public void setLogin(Login login) {
+		this.login = login;
 	}
-
-	public String getPassword(){
-		return password;
-	}
-
-	public void setPassword(String password){
-		this.password = password;
+	public String Test(){
+		return "test";
 	}
 
 	public String CheckValidUser(){
-        if(user.equals("chandan") && 
-        		password.equals("chand")){
-        	System.out.println("chandan");
+        if(login.getUser().equals("test") && 
+        		login.getPassword().equals("test")){
 			return "success";
 		}
 		else{

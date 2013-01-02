@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/new.xhtml">
+	
+	<ui:define name="content" width="400">
+	<p:spacer height="100" />  
+	<p:dataTable id="tbl" var="plane" value="#{databaseBean.planes}" paginator="true" rows="10">  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Name" />  
+        </f:facet>  
+        <h:outputText value="#{plane.name}" />  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Tailnumber" />  
+        </f:facet>  
+        <h:outputText value="#{plane.tailNumber}"/>  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Capacity" />  
+        </f:facet>  
+        <h:outputText value="#{plane.capacity}" />  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Passengers" />  
+        </f:facet>  
+        <h:outputText value="#{plane.passengers}" />  
+    </p:column>  
+    
+     <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Destination" />  
+        </f:facet>  
+        <h:outputText value="#{plane.destination}" />  
+    </p:column> 
+    
+     <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Ready" />  
+        </f:facet>  
+        <h:outputText value="#{plane.readyToGo}" />  
+    </p:column> 
+</p:dataTable>  
+      
+
+ 
+</ui:define>
+
+</ui:composition>

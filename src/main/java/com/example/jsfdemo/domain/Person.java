@@ -17,6 +17,9 @@ public class Person {
 		this.additionalInfo=additionalInfo;
 		
 	}
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
 	@Size(min=3,max=20)
 	public String getFirstName() {
 		return firstName;

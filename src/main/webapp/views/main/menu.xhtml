@@ -6,17 +6,17 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:form>
 	<br/>
-        <p:button outcome="add.xhtml" value="Search" icon="ui-icon-star">  
+        <p:button outcome="statusPlane?faces-redirect=true" value="Search" icon="ui-icon-star">  
     		<f:param name="productId" value="20" />  
 		</p:button> 
 	<br/>
     	<p:menuButton value="Status">  
-            <p:menuitem value="Planes" url="add.xhtml" />  
+            <p:menuitem value="Planes" outcome="statusPlane?faces-redirect=true" />  
             <p:menuitem value="Persons" url="add.xhtml" />  
         </p:menuButton>  
      <br/>   
         <p:menuButton value="Plane">  
-            <p:menuitem value="Add" url="add.xhtml" />  
+            <p:menuitem value="Add" outcome="addPlane?faces-redirect=true" />  
             <p:menuitem value="Remove"    url="add.xhtml" />  
 
         </p:menuButton>  

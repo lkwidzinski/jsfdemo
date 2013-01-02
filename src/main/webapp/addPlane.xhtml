@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/new.xhtml">
+	
+	<ui:define name="content">
+	<p:spacer height="100" />  
+	<p:spacer height="100" />  
+	<h:form id="form">  
+          
+    	<p:panel header="Add plane">  
+       	 <h:panelGrid columns="2">  
+        	<h:outputText value="Name: " /> 
+        	<p:inputText id="name" value="#{databaseBean.plane.name}"/>
+            <h:outputText value="Tailnumber: " />  
+            <p:inputText id="tailnumber" value="#{databaseBean.plane.tailNumber}"/>  
+            <h:outputText value="Capacity: " /> 
+        	<p:inputText id="capacity" value="#{databaseBean.plane.capacity}"/>
+            <h:outputText value="Passengers: " />  
+            <p:inputText id="passengers" value="#{databaseBean.plane.passengers}"/>
+            <h:outputText value="Destination: " /> 
+        	<p:inputText id="destination" value="#{databaseBean.plane.destination}"/>
+            <h:outputText value="Ready to go:" />  
+  			<p:selectOneRadio id="readyToGo" value="#{databaseBean.plane.readyToGo}">  
+            	<f:selectItem itemLabel="True" itemValue="true" />  
+            	<f:selectItem itemLabel="False" itemValue="false" />    
+        	</p:selectOneRadio>  
+           
+      	  </h:panelGrid>  
+    	</p:panel>  
+		</h:form>
+      
+
+ 
+</ui:define>
+
+</ui:composition>

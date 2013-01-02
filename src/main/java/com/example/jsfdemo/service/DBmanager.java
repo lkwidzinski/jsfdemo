@@ -11,6 +11,12 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.example.jsfdemo.domain.Person;
 import com.example.jsfdemo.domain.Plane;
 
@@ -62,9 +68,11 @@ public final class DBmanager {
 	PreparedStatement removePerson;
 	PreparedStatement getAllPersons;
 	
-	private DBmanager() {
+	private DBmanager(){
 		try {
-			connection = DriverManager.getConnection(url);
+			Context ctx = new InitialContext();
+			DataSource ds = (DataSource) ctx.lookup("jdbc/hsqldb");
+			connection = ds.getConnection();
 			statement = connection.createStatement();
 
 			rs = connection.getMetaData().getTables(null, null, null,
@@ -125,12 +133,15 @@ public final class DBmanager {
 			} catch (SQLException e) {
 			e.printStackTrace();
 			}
+			catch(NamingException n){
+			n.printStackTrace();
+			}
 	
 	}
 
 	private static DBmanager instance;
 
-	public static DBmanager getInstance() {
+	public static DBmanager getInstance(){
 
 		if (instance == null)
 			synchronized (DBmanager.class) {
