@@ -1,18 +1,14 @@
 package com.example.jsfdemo.domain;
 
-import java.util.List;
-
-import javax.validation.constraints.Size;
-
 
 public class Plane{
 	
-	private String name;
-	private String tailNumber;
-	private int capacity;
-	private int passengers;
-	private String destination;
-	private boolean readyToGo;
+	private String name="";
+	private String tailNumber="";
+	private int capacity=0;
+	private int passengers=0;
+	private String destination="";
+	private boolean readyToGo=false;
 	
 	public Plane(String name, String tailNumber, int capacity,int passengers, String destination, boolean readyToGo){
 		this.name=name;
@@ -23,41 +19,42 @@ public class Plane{
 		this.readyToGo=readyToGo;
 		
 	}
-	public Plane() {
-		// TODO Auto-generated constructor stub
-	}
-	//get
-	@Size(min=1)
+	public Plane() {}
 	public String getName() {
 		return name;
 	}
-	@Size(min=1)
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getTailNumber() {
 		return tailNumber;
 	}
-	@Size(min=1)
+	public void setTailNumber(String tailNumber) {
+		this.tailNumber = tailNumber;
+	}
 	public int getCapacity() {
 		return capacity;
 	}
-	@Size(min=0)
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
 	public int getPassengers() {
 		return passengers;
 	}
-
+	public void setPassengers(int passengers) {
+		this.passengers = passengers;
+	}
 	public String getDestination() {
 		return destination;
 	}
-
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
 	public boolean isReadyToGo() {
 		return readyToGo;
 	}
-
-	public String toString(){
-	
-		String s=String.format("%15s||%10s||%8s||%10s||%15s||%8s\n",name,tailNumber,capacity,passengers,destination,readyToGo);
-		
-		return s;
+	public void setReadyToGo(boolean readyToGo) {
+		this.readyToGo = readyToGo;
 	}
-
-
+	
 }

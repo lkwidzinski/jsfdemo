@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -57,8 +56,8 @@ public class DatabaseBean implements Serializable {
 	//------------
 	
 	public String addPlane(){
-		
-		return null;
+		planeMgr.addPlane(plane);
+		return "statusPlane";
 		
 	}
 	
