@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 
-import javax.faces.bean.RequestScoped;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -46,12 +48,7 @@ public class DatabaseBean implements Serializable {
 		this.plane = plane;
 	}
 
-	
-	
-	
-	
-	
-	
+
 	
 	//------------
 	

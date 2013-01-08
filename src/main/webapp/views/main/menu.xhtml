@@ -4,30 +4,26 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
+<p:panel style="width:150px;height:135px;">
 <h:form>
-	<br/>
         <p:button outcome="home?faces-redirect=true" value="Search" icon="ui-icon-star">  
-    		<f:param name="productId" value="20" />  
 		</p:button> 
-	<br/>
     	<p:menuButton value="Status">  
             <p:menuitem value="Planes" outcome="statusPlane?faces-redirect=true" />  
             <p:menuitem value="Persons" url="add.xhtml" />  
         </p:menuButton>  
-     <br/>   
         <p:menuButton value="Plane">  
             <p:menuitem value="Add" outcome="addPlane?faces-redirect=true" />  
             <p:menuitem value="Remove"    url="add.xhtml" />  
-
-        </p:menuButton>  
-      <br/>  
+        </p:menuButton>    
         <p:menuButton value="Passenger">  
             <p:menuitem value="Add" url="add.xhtml" />  
             <p:menuitem value="Remove" url="add.xhtml" />  
             <p:menuitem value="Add to database" url="add.xhtml" />  
         </p:menuButton>  
-	<br/>
-	<br/>
-
 </h:form>
+</p:panel>
+<br/>
+	<br/><br/>
+	<br/>
 </ui:composition>

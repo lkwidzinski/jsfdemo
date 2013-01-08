@@ -3,32 +3,38 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/templates/default.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/new.xhtml">
+	
 	<ui:define name="content">
-		<h:form id="personform">
-			<h:panelGrid columns="2">
-
-				<h:outputText value="Add Person with very simple form" />
-				<h:commandLink action="addSimple?faces-redirect=true">
-					<h:outputText value=" Add person " />
-				</h:commandLink>
-
-				<h:outputText value="Add Person with some validators" />
-				<h:commandLink action="addValidation?faces-redirect=true">
-					<h:outputText value=" Add person " />
-				</h:commandLink>
-
-				<h:outputText value="Add Person with JSF 2.0 ajax support" />
-				<h:commandLink action="addAjax?faces-redirect=true">
-					<h:outputText value=" Add person " />
-				</h:commandLink>
-
-				<h:outputText value="Add Person with RichFaces support" />
-				<h:commandLink action="addRF?faces-redirect=true">
-					<h:outputText value=" Add person " />
-				</h:commandLink>
-
-			</h:panelGrid>
+	<p:spacer height="100" />  
+	<p:spacer height="100" />  
+	<h:form id="form">  
+          
+    	<p:panel header="Add plane">  
+       	 <h:panelGrid columns="2">  
+        	<h:outputText value="Name: " /> 
+        	<p:inputText id="name" value="#{databaseBean.plane.name}"/>
+            <h:outputText value="Tailnumber: " />  
+            <p:inputText id="tailnumber" value="#{databaseBean.plane.tailNumber}"/>  
+            <h:outputText value="Capacity: " /> 
+        	<p:inputText id="capacity" value="#{databaseBean.plane.capacity}"/>
+            <h:outputText value="Passengers: " />  
+            <p:inputText id="passengers" value="#{databaseBean.plane.passengers}"/>
+            <h:outputText value="Destination: " /> 
+        	<p:inputText id="destination" value="#{databaseBean.plane.destination}"/>
+            <h:outputText value="Ready to go:" />  
+  			<p:selectOneRadio id="readyToGo" value="#{databaseBean.plane.readyToGo}">  
+            	<f:selectItem itemLabel="True" itemValue="true" />  
+            	<f:selectItem itemLabel="False" itemValue="false" />    
+        	</p:selectOneRadio>  
+           <p:button outcome="#{databaseBean.addPlane()}" value="Add" icon="ui-icon-key"/>   
+      	  </h:panelGrid>  
+    	</p:panel>  
 		</h:form>
-	</ui:define>
+      
+
+ 
+</ui:define>
+
 </ui:composition>

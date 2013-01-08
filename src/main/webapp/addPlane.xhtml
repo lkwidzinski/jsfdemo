@@ -7,11 +7,11 @@
 	template="/templates/new.xhtml">
 	
 	<ui:define name="content">
-	<p:spacer height="100" />  
-	<p:spacer height="100" />  
+	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
 	<h:form id="form">  
           
     	<p:panel header="Add plane">  
+    	 <p:messages id="messages" />  
        	 <h:panelGrid columns="2">  
         	<h:outputText value="Name: " /> 
         	<p:inputText id="name" value="#{databaseBean.plane.name}"/>
@@ -28,11 +28,12 @@
             	<f:selectItem itemLabel="True" itemValue="true" />  
             	<f:selectItem itemLabel="False" itemValue="false" />    
         	</p:selectOneRadio>  
-           <p:button outcome="#{databaseBean.addPlane()}" value="Add" icon="ui-icon-key"/>   
+           <p:commandButton value="Add" actionListener="#{databaseBean.addPlane}"   
+            ajax="false" action="statusPlane?faces-redirect=true"  icon="ui-icon-disk"/>     
       	  </h:panelGrid>  
     	</p:panel>  
 		</h:form>
-      
+      </div>
 
  
 </ui:define>

@@ -75,8 +75,8 @@ box-shadow: -5px -5px 5px #000,inset 0 0 7px 3px white;
 	visibility:hidden;
 }
 .rightMenu .foreground{
-	margin-left:50px;
-	margin-right:50px;
+	margin-left:30px;
+	margin-top:30px;
 	position:absolute;
 	left:0%;
 	top:0%;
@@ -107,4 +107,9 @@ box-shadow: -5px -5px 5px #000,inset 0 0 7px 3px white;
 -webkit-box-shadow: -5px -5px 5px #000,inset 0 0 5px 5px #999;
 box-shadow: -5px -5px 5px #000,inset 0 0 7px 3px white;
 
+}
+.rightMenu .ui-panel .ui-panel-content {
+        border: 0;
+    background: none;
+        padding: 0;
 }

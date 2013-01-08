@@ -16,8 +16,8 @@
         	<p:inputText id="login" value="#{loginBean.login.user}"/>
             <h:outputText value="Password: " />  
             <p:password id="password" value="#{loginBean.login.password}" />  
-  			<p:button outcome="#{loginBean.CheckValidUser()}" value="Login" icon="ui-icon-key">   
-			</p:button>
+  			<p:commandButton value="Add" actionListener="#{loginBean.CheckValidUser}"   
+            ajax="false" outcome="statusPlane.xhtml"  icon="ui-icon-disc"/>   
            
       	  </h:panelGrid>  
     	</p:panel>  

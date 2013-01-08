@@ -1,5 +1,8 @@
 package com.example.jsfdemo.domain;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 
 public class Plane{
 	
@@ -20,24 +23,28 @@ public class Plane{
 		
 	}
 	public Plane() {}
+	@Size(min=2,max=20)
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Size(min=2,max=20)
 	public String getTailNumber() {
 		return tailNumber;
 	}
 	public void setTailNumber(String tailNumber) {
 		this.tailNumber = tailNumber;
 	}
+	@Min(1)
 	public int getCapacity() {
 		return capacity;
 	}
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+	@Min(0)
 	public int getPassengers() {
 		return passengers;
 	}
@@ -56,5 +63,8 @@ public class Plane{
 	public void setReadyToGo(boolean readyToGo) {
 		this.readyToGo = readyToGo;
 	}
-	
+	public String toString(){
+		String s=String.format("%15s||%10s||%8s||%10s||%15s||%8s\n",name,tailNumber,capacity,passengers,destination,readyToGo);
+		return s;
+	}
 }
