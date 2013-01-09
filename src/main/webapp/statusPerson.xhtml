@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/new.xhtml">
+	
+	<ui:define name="content" width="400">
+	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
+	<p:dataTable id="tbl" var="plane" value="#{personMgrBean.persons}" paginator="true" rows="8">  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="First Name" />  
+        </f:facet>  
+        <h:outputText value="#{person.firstName}" />  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Last Name" />  
+        </f:facet>  
+        <h:outputText value="#{person.lastName}"/>  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="PESEL" />  
+        </f:facet>  
+        <h:outputText value="#{person.pesel}" />  
+    </p:column>  
+  
+    <p:column>  
+        <f:facet name="header">  
+            <h:outputText value="Add. info" />  
+        </f:facet>  
+        <h:outputText value="#{person.additionalInfo}" />  
+    </p:column>  
+    
+</p:dataTable>  
+      
+
+</div>
+</ui:define>
+
+</ui:composition>

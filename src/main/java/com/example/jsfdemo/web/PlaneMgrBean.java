@@ -16,8 +16,8 @@ import javax.inject.Named;
 import com.example.jsfdemo.domain.Plane;
 import com.example.jsfdemo.service.PlaneManager;
 @RequestScoped
-@Named("databaseBean")
-public class DatabaseBean implements Serializable {
+@Named("planeMgrBean")
+public class PlaneMgrBean implements Serializable {
 
 	private static final long serialVersionUID = 2L;
 

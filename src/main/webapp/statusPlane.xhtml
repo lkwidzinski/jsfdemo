@@ -8,7 +8,7 @@
 	
 	<ui:define name="content" width="400">
 	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
-	<p:dataTable id="tbl" var="plane" value="#{databaseBean.planes}" paginator="true" rows="8">  
+	<p:dataTable id="tbl" var="plane" value="#{planeMgrBean.planes}" paginator="true" rows="8">  
     <p:column>  
         <f:facet name="header">  
             <h:outputText value="Name" />  
