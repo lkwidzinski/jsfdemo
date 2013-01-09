@@ -33,54 +33,28 @@ public class PersonMgrBean implements Serializable {
 	public void init(){
 		persons=personMgr.getAll();
 	}
-	
-	
-
-	
 	//------------
 	
 	public Person getPerson() {
 		return person;
 	}
-
-
-
-
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-
-
-
-
 	public List<Person> getPersons() {
 		return persons;
 	}
-
-
-
-
 	public void setPersons(List<Person> persons) {
 		this.persons = persons;
 	}
-
-
-
-
 	public PersonManager getPersonMgr() {
 		return personMgr;
 	}
-
-
-
-
 	public void setPersonMgr(PersonManager personMgr) {
 		this.personMgr = personMgr;
 	}
 
-
 //-------------------------------------
-
 	public String addPerson(){
 		personMgr.addPerson(person);
 		return "statusPerson";
