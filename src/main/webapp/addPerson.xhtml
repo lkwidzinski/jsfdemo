@@ -10,26 +10,20 @@
 	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
 	<h:form id="form">  
           
-    	<p:panel header="Add plane">  
+    	<p:panel header="Add person">  
     	 <p:messages id="messages" />  
        	 <h:panelGrid columns="2">  
-        	<h:outputText value="Name: " /> 
-        	<p:inputText id="name" value="#{planeMgrBean.plane.name}"/>
-            <h:outputText value="Tailnumber: " />  
-            <p:inputText id="tailnumber" value="#{planeMgrBean.plane.tailNumber}"/>  
-            <h:outputText value="Capacity: " /> 
-        	<p:inputText id="capacity" value="#{planeMgrBean.plane.capacity}"/>
-            <h:outputText value="Passengers: " />  
-            <p:inputText id="passengers" value="#{planeMgrBean.plane.passengers}"/>
-            <h:outputText value="Destination: " /> 
-        	<p:inputText id="destination" value="#{planeMgrBean.plane.destination}"/>
-            <h:outputText value="Ready to go:" />  
-  			<p:selectOneRadio id="readyToGo" value="#{planeMgrBean.plane.readyToGo}">  
-            	<f:selectItem itemLabel="True" itemValue="true" />  
-            	<f:selectItem itemLabel="False" itemValue="false" />    
-        	</p:selectOneRadio>  
-           <p:commandButton value="Add" actionListener="#{planeMgrBean.addPlane}"   
-            ajax="false" action="statusPlane?faces-redirect=true"  icon="ui-icon-disk"/>     
+        	<h:outputText value="First Name: " /> 
+        	<p:inputText id="firstname" value="#{personMgrBean.person.firstName}"/>
+            <h:outputText value="Last Name: " />  
+            <p:inputText id="lastname" value="#{personMgrBean.person.lastName}"/>  
+            <h:outputText value="PESEL: " /> 
+        	<p:inputText id="pesel" value="#{personMgrBean.person.pesel}"/>
+            <h:outputText value="Add. Info: " />  
+            <p:inputText id="add_info" value="#{personMgrBean.person.additionalInfo}"/>
+
+           <p:commandButton value="Add" actionListener="#{personMgrBean.addPerson}"   
+            ajax="false" action="statusPerson?faces-redirect=true"  icon="ui-icon-disk"/>     
       	  </h:panelGrid>  
     	</p:panel>  
 		</h:form>

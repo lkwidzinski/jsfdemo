@@ -36,7 +36,7 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	@Size(min=11)
+	
 	public int getPesel() {
 		return pesel;
 	}

@@ -10,7 +10,7 @@
 		</p:button> 
     	<p:menuButton value="Status">  
             <p:menuitem value="Planes" outcome="statusPlane?faces-redirect=true" />  
-            <p:menuitem value="Persons" url="statusPerson?faces-redirect=true" />  
+            <p:menuitem value="Persons" outcome="statusPerson?faces-redirect=true" />  
         </p:menuButton>  
         <p:menuButton value="Plane">  
             <p:menuitem value="Add" outcome="addPlane?faces-redirect=true" />  
@@ -19,7 +19,7 @@
         <p:menuButton value="Passenger">  
             <p:menuitem value="Add" url="add.xhtml" />  
             <p:menuitem value="Remove" url="add.xhtml" />  
-            <p:menuitem value="Add to database" url="add.xhtml" />  
+            <p:menuitem value="Add to database" outcome="addPerson?faces-redirect=true" />  
         </p:menuButton>  
 </h:form>
 </p:panel>
