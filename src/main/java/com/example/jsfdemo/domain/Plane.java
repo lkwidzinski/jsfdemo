@@ -30,7 +30,7 @@ public class Plane{
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Size(min=2,max=20)
+	@Size(min=2,max=6)
 	public String getTailNumber() {
 		return tailNumber;
 	}
@@ -51,6 +51,7 @@ public class Plane{
 	public void setPassengers(int passengers) {
 		this.passengers = passengers;
 	}
+	@Size(max=20)
 	public String getDestination() {
 		return destination;
 	}

@@ -14,12 +14,13 @@
         </p:menuButton>  
         <p:menuButton value="Plane">  
             <p:menuitem value="Add" outcome="addPlane?faces-redirect=true" />  
-            <p:menuitem value="Remove"    url="add.xhtml" />  
+            <p:menuitem value="Remove" outcome="removePlane?faces-redirect=true" />  
         </p:menuButton>    
         <p:menuButton value="Passenger">  
             <p:menuitem value="Add" url="add.xhtml" />  
             <p:menuitem value="Remove" url="add.xhtml" />  
             <p:menuitem value="Add to database" outcome="addPerson?faces-redirect=true" />  
+            <p:menuitem value="Remove from database" outcome="removePerson?faces-redirect=true" /> 
         </p:menuButton>  
 </h:form>
 </p:panel>

@@ -6,7 +6,7 @@ public class Person {
 	
 	String firstName="";
 	String lastName="";
-	int pesel;
+	int pesel=0;
 	String additionalInfo="";
 	
 	public Person(String firstName,String lastName, int pesel, String additionalInfo){
@@ -42,7 +42,7 @@ public class Person {
 	public void setPesel(int pesel) {
 		this.pesel = pesel;
 	}
-
+	@Size(max=40)
 	public String getAdditionalInfo() {
 		return additionalInfo;
 	}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/new.xhtml">
+	
+	<ui:define name="content">
+	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
+	<h:form>  
+  		<p:panel header="Remove persons">  
+  			<p:messages id="messages" /> 
+    		<p:selectCheckboxMenu value="#{personMgrBean.selectedPersons}" label="Persons" filter="true" filterText="Filter" filterMatchMode="startsWith" panelStyle="width:500px">  
+     		   <f:selectItems value="#{personMgrBean.personsMap}" />  
+   			 </p:selectCheckboxMenu>  
+  
+   			 <p:separator style="margin-bottom:10px"/>  
+  
+    		<p:commandButton value="Remove" actionListener="#{personMgrBean.removePerson}"   
+    		ajax="false" action="statusPerson?faces-redirect=true"  icon="ui-icon-trash"/> 
+    	</p:panel>
+    </h:form>
+    </div>
+
+ 
+</ui:define>
+
+</ui:composition>
