@@ -98,7 +98,22 @@
     	<artifactId>hsqldb</artifactId>
     	<version>2.2.4</version>
     </dependency>
-		</dependencies>
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+	</dependencies>
 		<build>
 		<finalName>jsfdemo</finalName>
 		<plugins>

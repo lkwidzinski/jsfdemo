@@ -31,6 +31,15 @@ public class PlaneMgrBean implements Serializable {
 	
 	private Map<String,String> planesMap=new HashMap<String, String>();  
 	
+	@Inject
+	private PlaneManager planeMgr;
+	@PostConstruct
+	public void init(){
+		planes=planeMgr.getAll();
+		for(Plane p:planes)
+		planesMap.put(p.getTailNumber(), p.getTailNumber());
+	}
+//---------------------------------	
 	public Map<String, String> getPlanesMap() {
 		return planesMap;
 	}
@@ -41,17 +50,6 @@ public class PlaneMgrBean implements Serializable {
 
 	public void setSelectedPlanes(List<String> selectedPlanes) {
 		this.selectedPlanes = selectedPlanes;
-	}
-
-
-
-	@Inject
-	private PlaneManager planeMgr;
-	@PostConstruct
-	public void init(){
-		planes=planeMgr.getAll();
-		for(Plane p:planes)
-		planesMap.put(p.getTailNumber(), p.getTailNumber());
 	}
 	
 	public List<Plane> getPlanes() {

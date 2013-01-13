@@ -8,37 +8,37 @@
 	
 	<ui:define name="content" width="400">
 	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
-	<p:dataTable id="tbl" var="plane" value="#{planeMgrBean.planes}" paginator="true" rows="7">  
+	<p:dataTable id="tbl" var="plane" value="#{planeMgrBean.planes}" sortMode="multiple" paginator="true" rows="7">  
 	<f:facet name="header"> Status of the planes </f:facet>
-    <p:column>  
+    <p:column sortBy="#{plane.name}">  
         <f:facet name="header">  
             <h:outputText value="Name" />  
         </f:facet>  
         <h:outputText value="#{plane.name}" />  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{plane.tailNumber}">  
         <f:facet name="header">  
             <h:outputText value="Tailnumber" />  
         </f:facet>  
         <h:outputText value="#{plane.tailNumber}"/>  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{plane.capacity}">  
         <f:facet name="header">  
             <h:outputText value="Capacity" />  
         </f:facet>  
         <h:outputText value="#{plane.capacity}" />  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{plane.passengers}">  
         <f:facet name="header">  
             <h:outputText value="Passengers" />  
         </f:facet>  
         <h:outputText value="#{plane.passengers}" />  
     </p:column>  
     
-     <p:column>  
+     <p:column sortBy="#{plane.destination}">  
         <f:facet name="header">  
             <h:outputText value="Destination" />  
         </f:facet>  

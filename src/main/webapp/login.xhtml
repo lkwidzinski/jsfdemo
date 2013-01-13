@@ -7,7 +7,7 @@
 	template="/templates/new.xhtml">
 	
 	<ui:define name="content">
-	<p:spacer height="100" />  
+	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
 	<h:form id="form">  
           
     	<p:panel header="Enter your password">  
@@ -15,13 +15,17 @@
         	<h:outputText value="Login: " /> 
         	<p:inputText id="login" value="#{loginBean.login.user}"/>
             <h:outputText value="Password: " />  
-            <p:password id="password" value="#{loginBean.login.password}" />  
-  			<p:commandButton value="Add" actionListener="#{loginBean.CheckValidUser}"   
-            ajax="false" outcome="statusPlane.xhtml"  icon="ui-icon-disc"/>   
-           
+            <p:password id="password" value="#{loginBean.login.password}" />        
       	  </h:panelGrid>  
+      	 	<p:messages showDetail="true"/>  
+  
+    		<p:captcha label="Captcha"/>  
+  
+    		<p:commandButton value="Login" ajax="false"  
+                actionListener="#{captchaBean.submit}" icon="ui-icon-key"/>  
     	</p:panel>  
 		</h:form>
+	</div>
 	</ui:define>
 
 </ui:composition>

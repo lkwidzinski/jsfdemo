@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:j="http://primefaces.org/components">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><ui:insert name="windowTitle">#{msg.mainWindowTitle}</ui:insert>
@@ -12,6 +14,17 @@
 </h:head>
 <h:body> 
   <h:outputStylesheet library="css" name="new.css" target="body" />
+  
+<div id="rssfeed" style="width:250px;height:800px;margin-left:25px;margin-top:25px">
+<p:scrollPanel style="width:250px;height:800px" scrollMode="native"> 
+  <p:feedReader value="http://www.flightglobal.com/rss/military-news-rss/" var="feed">  
+    <h:outputText value="#{feed.title}" style="font-weight: bold"/>  
+    <br />  
+    <h:outputText value="#{feed.description.value}" escape="false"/>  
+    <p:separator />  
+  </p:feedReader>  
+ </p:scrollPanel>
+</div>  
    <div class="mainWindow">
 	 	<div class="leftMain">
 	 		<div class="title">

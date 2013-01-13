@@ -8,30 +8,30 @@
 	
 	<ui:define name="content" width="400">
 	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
-	<p:dataTable id="tbl" var="person" value="#{personMgrBean.persons}" paginator="true" rows="7">  
+	<p:dataTable id="tbl" var="person" value="#{personMgrBean.persons}" sortMode="multiple" paginator="true" rows="7">  
 	<f:facet name="header"> Status of the persons in DB </f:facet>
-    <p:column>  
+    <p:column sortBy="#{person.firstName}">  
         <f:facet name="header">  
             <h:outputText value="First Name" />  
         </f:facet>  
         <h:outputText value="#{person.firstName}" />  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{person.lastName}">  
         <f:facet name="header">  
             <h:outputText value="Last Name" />  
         </f:facet>  
         <h:outputText value="#{person.lastName}"/>  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{person.pesel}">  
         <f:facet name="header">  
             <h:outputText value="PESEL" />  
         </f:facet>  
         <h:outputText value="#{person.pesel}" />  
     </p:column>  
   
-    <p:column>  
+    <p:column sortBy="#{person.additionalInfo}">  
         <f:facet name="header">  
             <h:outputText value="Add. info" />  
         </f:facet>  
