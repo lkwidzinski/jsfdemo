@@ -1,6 +1,7 @@
 package com.example.jsfdemo.web;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -12,6 +13,8 @@ public class LoginBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private Date date1;
+	
 	private Login login=new Login();
 
 	public Login getLogin() {
@@ -30,5 +33,13 @@ public class LoginBean implements Serializable {
 		else{
 			return "fail";
 		}
+	}
+
+	public Date getDate1() {
+		return date1;
+	}
+
+	public void setDate1(Date date1) {
+		this.date1 = date1;
 	}
 }

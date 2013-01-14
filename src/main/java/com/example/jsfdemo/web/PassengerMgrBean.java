@@ -119,7 +119,13 @@ public class PassengerMgrBean implements Serializable {
 			}
 			return "statusPlane";
 		}
-
+		public String removePassenger() throws SQLException{
+			for(String s:selectedPersons){
+				int i=Integer.parseInt(s);
+				planeMgr.removePassenger(new Plane("",plane,0,0,"",false),new Person("","",i,""));
+			}
+			return "statusPlane";
+		}
 		
 	
 }

@@ -9,7 +9,7 @@
 	<ui:define name="content">
 	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
 	<h:form>  
-  		<p:panel header="Add passengers to a plane">  
+  		<p:panel header="Remove passengers from a plane">  
   			<p:messages id="messages" /> 
   			<h:panelGrid columns="2">  
   			<h:outputText value="Plane: " />  
@@ -24,7 +24,7 @@
   			</h:panelGrid>
    			 <p:separator style="margin-bottom:10px"/>  
   
-    		<p:commandButton value="Add" actionListener="#{passengerMgrBean.addPassenger}"   
+    		<p:commandButton value="Add" actionListener="#{passengerMgrBean.removePassenger}"   
     		ajax="false" action="statusPlane?faces-redirect=true"  icon="ui-icon-add"/> 
     	</p:panel>
     </h:form>

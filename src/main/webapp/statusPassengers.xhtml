@@ -6,8 +6,21 @@
 	xmlns:p="http://primefaces.org/ui"
 	template="/templates/new.xhtml">
 	
-	<ui:define name="content" width="400">
-	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
+	<ui:define name="content" width="400"> 
+	<div style="width:550px;height:80px;margin-left:0px;margin-top:100px">
+	<p:panel>
+	<f:facet name="header">
+	<h:panelGrid columns="2" style="margin-top:0px" cellpadding="0">
+	<h:outputText value="Plane: " />  
+        <p:selectOneMenu value="#{planeMgrBean.plane}" effect="fold" editable="true">  
+            <f:selectItem itemLabel="Select One" itemValue="" />  
+            <f:selectItems value="#{planeMgrBean.planesMap}" />  
+        </p:selectOneMenu> 
+	</h:panelGrid>
+	</f:facet>
+	</p:panel>
+	</div>
+	<div style="width:600px;height:400px;margin-left:25px;margin-top:45px">
 	<p:dataTable id="tbl" var="plane" value="#{planeMgrBean.planes}" sortMode="multiple" paginator="true" rows="7">  
 	<f:facet name="header"> Status of the planes </f:facet>
 	
