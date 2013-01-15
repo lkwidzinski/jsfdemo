@@ -5,60 +5,77 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:j="http://primefaces.org/components">
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><ui:insert name="windowTitle">#{msg.mainWindowTitle}</ui:insert>
 	</title>
 </h:head>
-<h:body> 
-  <h:outputStylesheet library="css" name="new.css" target="body" />
-  
-<div id="rssfeed" style="width:250px;height:800px;margin-left:25px;margin-top:25px;float:left">
-<p:scrollPanel style="width:250px;height:800px" scrollMode="native"> 
-  <p:feedReader value="http://www.flightglobal.com/rss/military-news-rss/" var="feed">  
-    <h:outputText value="#{feed.title}" style="font-weight: bold"/>  
-    <br />  
-    <h:outputText value="#{feed.description.value}" escape="false"/>  
-    <p:separator />  
-  </p:feedReader>  
- </p:scrollPanel>
-</div>  
-   <div class="mainWindow">
-	 	<div class="leftMain">
-	 		<div class="title">
-	 		 <div class="background"><br/>
-	 		 	<p>Airport Management/templabel</p>
-	 		 </div>
-	 		 <div class="foreground"><br/>
-	 		 	<p>Airport Management/templabel</p>
-	 		 </div>
-	 		</div>
-	 		<div class="content">
-	 		<ui:insert name="content"></ui:insert>
-	 		</div>
-	 	</div>
-	 	<div class="rightMenu">
-	 	 <div class="background">
-	 	  <ui:insert name="rightMenu">
-               <ui:include src="/views/main/menu.xhtml" />
-          </ui:insert>
-         </div>
-	 	 <div class="foreground">
-	 	  <ui:insert name="rightMenu">
-               <ui:include src="/views/main/menu.xhtml" />
-          </ui:insert>
-          </div>
-	 	</div>
-	<div class="footer">
-	<ui:include src="/views/main/footer.xhtml" />
-    </div>
-   </div>
-<div id="cal" style="width:250px;height:300px;margin-right:75px;margin-top:25px;float:right">
-<h:form id="form">  
-    <p:calendar value="#{loginBean.date1}" mode="inline" id="inlineCal"/>    
-</h:form>
-</div>
+<h:body>
+	<h:outputStylesheet library="css" name="new.css" target="body" />
+
+	<div id="rssfeed"
+		style="width: 250px; height: 800px; margin-left: 25px; margin-top: 25px; float: left">
+		<p:scrollPanel style="width:250px;height:800px" scrollMode="native">
+			<p:feedReader
+				value="http://www.flightglobal.com/rss/military-news-rss/"
+				var="feed">
+				<h:outputText value="#{feed.title}" style="font-weight: bold" />
+				<br />
+				<h:outputText value="#{feed.description.value}" escape="false" />
+				<p:separator />
+			</p:feedReader>
+		</p:scrollPanel>
+	</div>
+	<div class="mainWindow">
+		<div class="leftMain">
+			<div class="title">
+				<div class="background">
+					<h:form>
+						<p:toolbar>
+							<p:toolbarGroup align="center">
+								<p:button value="Airport Management"
+									outcome="home?faces-redirect=true" />
+							</p:toolbarGroup>
+						</p:toolbar>
+					</h:form>
+				</div>
+				<div class="foreground">
+					<h:form>
+						<p:toolbar>
+							<p:toolbarGroup align="center">
+								<p:button value="Airport Management"
+									outcome="home?faces-redirect=true" />
+							</p:toolbarGroup>
+						</p:toolbar>
+					</h:form>
+				</div>
+			</div>
+			<div class="content">
+				<ui:insert name="content"></ui:insert>
+			</div>
+		</div>
+		<div class="rightMenu">
+			<div class="background">
+				<ui:insert name="rightMenu">
+					<ui:include src="/views/main/menu.xhtml" />
+				</ui:insert>
+			</div>
+			<div class="foreground">
+				<ui:insert name="rightMenu">
+					<ui:include src="/views/main/menu.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+		<div class="footer">
+			<ui:include src="/views/main/footer.xhtml" />
+		</div>
+	</div>
+	<div id="cal"
+		style="width: 250px; height: 300px; margin-right: 75px; margin-top: 25px; float: right">
+		<h:form id="form">
+			<p:calendar value="#{loginBean.date1}" mode="inline" id="inlineCal" />
+		</h:form>
+	</div>
 </h:body>
 </html>
