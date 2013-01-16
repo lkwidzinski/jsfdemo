@@ -39,5 +39,7 @@ public class PlaneManager implements PlaneInterface{
 		return db.removeAllPassengers(obj);
 	}
 	
-	
+	public boolean showPassengers(Plane obj) throws SQLException{
+		return db.showPassengers(obj);
+	}
 }

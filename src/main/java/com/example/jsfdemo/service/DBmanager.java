@@ -50,6 +50,10 @@ public final class DBmanager {
 			"VALUES (?,?,?,?);";
 	private String removePersonSQL="DELETE FROM Persons where pesel=?;";
 	private String getAllPersonsSQL="SELECT * from Persons;";
+	private String showPassengersSQL="SELECT m.*"+
+									"FROM persons as m, planes_has_persons as php"+
+									"WHERE m.id =php.person_id"+
+									"AND php.plane_id=?;";
 	
 	//statementy planes
 	PreparedStatement addPlane;
@@ -63,6 +67,7 @@ public final class DBmanager {
 	PreparedStatement addPerson;
 	PreparedStatement removePerson;
 	PreparedStatement getAllPersons;
+	PreparedStatement showPassengers;
 	
 	private DBmanager(){
 		try {
@@ -125,6 +130,7 @@ public final class DBmanager {
 			addPerson=connection.prepareStatement(addPersonSQL);
 			removePerson=connection.prepareStatement(removePersonSQL);
 			getAllPersons=connection.prepareStatement(getAllPersonsSQL);
+			showPassengers=connection.prepareStatement(showPassengersSQL);
 			
 			} catch (SQLException e) {
 			e.printStackTrace();
@@ -272,6 +278,19 @@ public final class DBmanager {
 		e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public boolean showPassengers(Plane obj) throws SQLException{
+		ResultSet rs2=getAll.executeQuery();
+		int plane_id=99;
+		while(rs2.next())
+		{
+		if(rs2.getString("tailnumber").equalsIgnoreCase(obj.getTailNumber())){
+			plane_id=rs2.getInt("id");
+			break;}
+		}
+		showPassengers.setInt(1, plane_id);
+		return showPassengers.execute();
 	}
 	
 	//person
