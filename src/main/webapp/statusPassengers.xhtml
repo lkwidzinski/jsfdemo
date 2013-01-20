@@ -23,9 +23,9 @@
 	</p:panel>
 	</h:form>
 	</div>
-	<div style="width:600px;height:400px;margin-left:25px;margin-top:45px">
+	<div style="width:600px;height:400px;margin-left:25px;margin-top:45px;font-size:0.8em">
 	<h:form id="formeeee2">
-	<p:dataTable id="tbl" var="person" value="#{passengerMgrBean.persons}" sortMode="multiple" paginator="true" rows="7">  
+	<p:dataTable id="tbl" var="person" value="#{passengerMgrBean.persons}" sortMode="multiple" paginator="true" rows="9">  
 	<f:facet name="header"> Status of the persons in DB </f:facet>
     <p:column sortBy="#{person.firstName}">  
         <f:facet name="header">  

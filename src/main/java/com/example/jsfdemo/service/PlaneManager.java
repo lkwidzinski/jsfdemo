@@ -12,7 +12,8 @@ import com.example.jsfdemo.domain.PlaneInterface;
 @ApplicationScoped
 public class PlaneManager implements PlaneInterface{
 
-	private DBmanager db=DBmanager.getInstance();
+	private PlaneDBConn db=new PlaneDBConn();
+	private PassengerDBConn db2=new PassengerDBConn();
 	
 	public boolean addPlane(Plane obj) {
 		return db.addPlane(obj);
@@ -28,18 +29,14 @@ public class PlaneManager implements PlaneInterface{
 	}
 
 	public boolean addPassenger(Plane obj,Person p) throws SQLException {
-		return db.addPassenger(obj,p);
+		return db2.addPassenger(obj,p);
 	}
 
 	public boolean removePassenger(Plane obj,Person p) throws SQLException {
-		return db.removePassenger(obj,p);
-	}
-
-	public boolean removeAllPassengers(Plane obj) {
-		return db.removeAllPassengers(obj);
+		return db2.removePassenger(obj,p);
 	}
 	
 	public List<Person> showPassengers(Plane obj) throws SQLException{
-		return db.showPassengers(obj);
+		return db2.showPassengers(obj);
 	}
 }

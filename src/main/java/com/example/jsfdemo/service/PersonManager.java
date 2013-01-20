@@ -9,7 +9,7 @@ import com.example.jsfdemo.domain.PersonInterface;
 @ApplicationScoped
 public class PersonManager implements PersonInterface{
 	
-	private DBmanager db=DBmanager.getInstance();
+	private PersonDBConn db=new PersonDBConn();
 
 	@Override
 	public boolean addPerson(Person obj) {
