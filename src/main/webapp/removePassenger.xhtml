@@ -8,7 +8,7 @@
 	
 	<ui:define name="content">
 	<div style="width:500px;height:400px;margin-left:25px;margin-top:125px">
-	<h:form>  
+	<h:form id="forms22">  
   		<p:panel header="Remove passengers from a plane">  
   			<p:messages id="messages" /> 
   			<h:panelGrid columns="2">  
@@ -18,7 +18,7 @@
        		 </p:selectOneMenu>  
   			
   			<h:outputText value="Persons: " />
-    		<p:selectCheckboxMenu value="#{passengerMgrBean.selectedPersons}" label="Persons" filter="true" filterText="Filter" filterMatchMode="startsWith" panelStyle="width:500px">  
+    		<p:selectCheckboxMenu id="selectbox" value="#{passengerMgrBean.selectedPersons}" label="Persons" filter="true" filterText="Filter" filterMatchMode="startsWith" panelStyle="width:500px">  
      		   <f:selectItems value="#{passengerMgrBean.personsMap}" />  
    			 </p:selectCheckboxMenu>  
   			</h:panelGrid>

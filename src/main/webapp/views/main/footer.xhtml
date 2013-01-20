@@ -5,12 +5,13 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:form>  
-    
   <p:toolbar>  
     <p:toolbarGroup align="left">  
-        <p:commandButton type="button" value="------" icon="ui-icon-document" />  
+        <p:commandButton value="Pop. Planes" icon="ui-icon-document" actionListener="#{planeMgrBean.planeMaker}"
+        ajax="false" action="statusPlane?faces-redirect=true"/>  
   
-        <p:commandButton type="button" value="------" icon="ui-icon-folder-open"/>  
+        <p:commandButton value="Pop. Persons" icon="ui-icon-document" actionListener="#{personMgrBean.personMaker}"
+        ajax="false" action="statusPerson?faces-redirect=true"/>
   
         <p:separator />  
   
@@ -18,12 +19,10 @@
     </p:toolbarGroup>  
   
     <p:toolbarGroup align="right">  
-        <p:menuButton value="------">  
-            <p:menuitem value="------" url="http://www.primefaces.org" />  
-            <p:menuitem value="------"  
-                        url="http://www.primefaces.org/showcase" />  
-            <p:menuitem value="------"  
-                        url="http://www.primefaces.org/showcase/touch" />  
+        <p:menuButton value="Links" >  
+            <p:menuitem value="Japan Airlines" url="http://www.jal.com/"/>  
+            <p:menuitem value="PLL LOT" url="http://www.lot.com/pl/pl/web/newlot/home" />  
+            <p:menuitem value="BOEING" url="http://www.boeing.com/" />  
         </p:menuButton>  
     </p:toolbarGroup>  
   

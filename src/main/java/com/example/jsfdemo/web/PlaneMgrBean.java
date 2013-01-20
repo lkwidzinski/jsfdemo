@@ -19,6 +19,7 @@ import javax.inject.Named;
 import org.primefaces.event.ToggleEvent;
 
 
+import com.example.jsfdemo.domain.ExamplePlaneMaker;
 import com.example.jsfdemo.domain.Plane;
 import com.example.jsfdemo.service.PlaneManager;
 @RequestScoped
@@ -88,6 +89,9 @@ public class PlaneMgrBean implements Serializable {
 		}
 		
 		return "statusPlane";
+	}
+	public void planeMaker(){
+		ExamplePlaneMaker pk=new ExamplePlaneMaker();
 	}
 
 	

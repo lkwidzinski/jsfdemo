@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 
+import com.example.jsfdemo.domain.ExamplePersonMaker;
 import com.example.jsfdemo.domain.Person;
 import com.example.jsfdemo.domain.Plane;
 import com.example.jsfdemo.service.PersonManager;
@@ -91,6 +92,8 @@ public class PersonMgrBean implements Serializable {
 		}
 		return "statusPerson";
 	}
-
+	public void personMaker(){
+		ExamplePersonMaker nk= new ExamplePersonMaker();
+	}
 	
 }

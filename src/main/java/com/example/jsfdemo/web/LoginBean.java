@@ -25,7 +25,7 @@ public class LoginBean implements Serializable {
 		this.login = login;
 	}
 
-	public String CheckValidUser(){
+	public String checkValidUser(){
         if(login.getUser().equals("test") && 
         		login.getPassword().equals("test")){
 			return "success";

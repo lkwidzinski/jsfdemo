@@ -6,21 +6,21 @@
 	xmlns:p="http://primefaces.org/ui">
 <p:panel style="width:150px;height:135px;">
 <h:form>
-        <p:button outcome="home?faces-redirect=true" value="Search" icon="ui-icon-star">  
-		</p:button> 
-    	<p:menuButton value="Status">  
+        <p:menuButton value="Status">  
             <p:menuitem value="Planes" outcome="statusPlane?faces-redirect=true" />  
             <p:menuitem value="Persons" outcome="statusPerson?faces-redirect=true" />  
         </p:menuButton>  
         <p:menuButton value="Plane">  
             <p:menuitem value="Add" outcome="addPlane?faces-redirect=true" />  
             <p:menuitem value="Remove" outcome="removePlane?faces-redirect=true" />  
-        </p:menuButton>    
+        </p:menuButton>  
+        <p:menuButton value="Person">  
+            <p:menuitem value="Add" outcome="addPerson?faces-redirect=true" />  
+            <p:menuitem value="Remove" outcome="removePerson?faces-redirect=true" />  
+        </p:menuButton>   
         <p:menuButton value="Passenger">  
             <p:menuitem value="Add" outcome="addPassenger?faces-redirect=true" />  
-            <p:menuitem value="Remove" outcome="removePassenger?faces-redirect=true" />  
-            <p:menuitem value="Add to database" outcome="addPerson?faces-redirect=true" />  
-            <p:menuitem value="Remove from database" outcome="removePerson?faces-redirect=true" />
+            <p:menuitem value="Remove" outcome="removePassenger?faces-redirect=true" /> 
             <p:menuitem value="Show passengers from plane" outcome="statusPassengers?faces-redirect=true" />   
         </p:menuButton>  
 </h:form>

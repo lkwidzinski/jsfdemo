@@ -7,16 +7,16 @@
 	template="/templates/new.xhtml">
 
 	<ui:define name="content">	
-	<p:spacer height="100" />
-
-    	<p:panel background="red">  
-      
-  			<p:button outcome="login?faces-redirect=true" value="Login" icon="ui-icon-key">   
-			</p:button>
-           
-      	    
-    	</p:panel>  
-
+			<div style="width:500px;height:400px;margin-left:25px;margin-top:220px">
+			<p:panel>
+			<f:facet name="header">  
+            <h:outputText value="Welcome to Airport Management" />  
+        	</f:facet>
+        	Welcome!<br/>
+        	We'd like to introduce to you this application that lets you manage your planes and passengers.<br/><br/>
+        	Team
+			</p:panel>
+			</div>
 	</ui:define>
 
 </ui:composition>

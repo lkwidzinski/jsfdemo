@@ -22,7 +22,8 @@
     		<p:captcha label="Captcha"/>  
   
     		<p:commandButton value="Login" ajax="false"  
-                actionListener="#{captchaBean.submit}" icon="ui-icon-key"/>  
+                actionListener="#{captchaBean.submit}" icon="ui-icon-key"
+               action="#{loginBean.checkValidUser}"/>  
     	</p:panel>  
 		</h:form>
 	</div>

@@ -7,8 +7,8 @@
 	template="/templates/new.xhtml">
 	
 	<ui:define name="content" width="400">
-	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px">
-	<p:dataTable id="tbl" var="person" value="#{personMgrBean.persons}" sortMode="multiple" paginator="true" rows="7">  
+	<div style="width:600px;height:400px;margin-left:25px;margin-top:220px;font-size:0.8em">
+	<p:dataTable id="tbl" var="person" value="#{personMgrBean.persons}" sortMode="multiple" paginator="true" rows="9">  
 	<f:facet name="header"> Status of the persons in DB </f:facet>
     <p:column sortBy="#{person.firstName}">  
         <f:facet name="header">  
