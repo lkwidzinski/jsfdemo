@@ -8,67 +8,56 @@
 	
 	<ui:define name="content" width="400"> 
 	<div style="width:550px;height:80px;margin-left:0px;margin-top:110px">
+	<h:form id="formeeee">
 	<p:panel>
 	<f:facet name="header">
 	<h:panelGrid columns="2" style="margin-top:0px" cellpadding="0">
 	<h:outputText value="Plane: " />  
-        <p:selectOneMenu value="#{planeMgrBean.plane}" effect="fold" editable="true">  
-            <f:selectItem itemLabel="Select One" itemValue="" />  
-            <f:selectItems value="#{planeMgrBean.planesMap}" />  
+        <p:selectOneMenu value="#{passengerMgrBean.plane}" effect="fold" editable="true" >  
+            <f:selectItem itemLabel="Select One" itemValue="#{passengerMgrBean.plane}" />  
+            <f:selectItems value="#{passengerMgrBean.planesMap}" /> 
+            <p:ajax event="change" update=":formeeee2:tbl" listener="#{passengerMgrBean.showPassenger}"/>
         </p:selectOneMenu> 
 	</h:panelGrid>
 	</f:facet>
 	</p:panel>
+	</h:form>
 	</div>
 	<div style="width:600px;height:400px;margin-left:25px;margin-top:45px">
-	<p:dataTable id="tbl" var="plane" value="#{planeMgrBean.planes}" sortMode="multiple" paginator="true" rows="7">  
-	<f:facet name="header"> Status of the planes </f:facet>
-	
-    <p:column sortBy="#{plane.name}">  
+	<h:form id="formeeee2">
+	<p:dataTable id="tbl" var="person" value="#{passengerMgrBean.persons}" sortMode="multiple" paginator="true" rows="7">  
+	<f:facet name="header"> Status of the persons in DB </f:facet>
+    <p:column sortBy="#{person.firstName}">  
         <f:facet name="header">  
-            <h:outputText value="Name" />  
+            <h:outputText value="First Name" />  
         </f:facet>  
-        <h:outputText value="#{plane.name}" />  
+        <h:outputText value="#{person.firstName}" />  
     </p:column>  
   
-    <p:column sortBy="#{plane.tailNumber}">  
+    <p:column sortBy="#{person.lastName}">  
         <f:facet name="header">  
-            <h:outputText value="Tailnumber" />  
+            <h:outputText value="Last Name" />  
         </f:facet>  
-        <h:outputText value="#{plane.tailNumber}"/>  
+        <h:outputText value="#{person.lastName}"/>  
     </p:column>  
   
-    <p:column sortBy="#{plane.capacity}">  
+    <p:column sortBy="#{person.pesel}">  
         <f:facet name="header">  
-            <h:outputText value="Capacity" />  
+            <h:outputText value="PESEL" />  
         </f:facet>  
-        <h:outputText value="#{plane.capacity}" />  
+        <h:outputText value="#{person.pesel}" />  
     </p:column>  
   
-    <p:column sortBy="#{plane.passengers}">  
+    <p:column sortBy="#{person.additionalInfo}">  
         <f:facet name="header">  
-            <h:outputText value="Passengers" />  
+            <h:outputText value="Add. info" />  
         </f:facet>  
-        <h:outputText value="#{plane.passengers}" />  
+        <h:outputText value="#{person.additionalInfo}" />  
     </p:column>  
-    
-     <p:column sortBy="#{plane.destination}">  
-        <f:facet name="header">  
-            <h:outputText value="Destination" />  
-        </f:facet>  
-        <h:outputText value="#{plane.destination}" />  
-    </p:column> 
-    
-     <p:column>  
-        <f:facet name="header">  
-            <h:outputText value="Ready" />  
-        </f:facet>  
-        <h:outputText value="#{plane.readyToGo}" />  
-    </p:column> 
     
 </p:dataTable>  
       
-
+</h:form>
 </div>
 </ui:define>
 

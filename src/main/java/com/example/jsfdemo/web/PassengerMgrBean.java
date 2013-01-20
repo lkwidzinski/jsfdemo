@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.ValueChangeEvent;
 
 
 import javax.inject.Inject;
@@ -46,7 +47,7 @@ public class PassengerMgrBean implements Serializable {
 	@Inject
 	private PersonManager personMgr;
 	@PostConstruct
-	public void init(){
+	public void init() throws SQLException{
 		persons=personMgr.getAll();
 		for(Person p:persons)
 		personsMap.put(p.getPesel(), p.getPesel());
@@ -126,6 +127,12 @@ public class PassengerMgrBean implements Serializable {
 			}
 			return "statusPlane";
 		}
-		
+		public String showPassenger() throws SQLException{
+			persons=planeMgr.showPassengers(new Plane("",plane,0,0,"",false));
+			for(Person p:persons)
+			personsMap.put(p.getPesel(), p.getPesel());
+			
+			return null;
+		}
 	
 }

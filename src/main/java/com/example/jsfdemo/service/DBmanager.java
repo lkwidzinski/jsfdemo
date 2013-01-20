@@ -50,9 +50,9 @@ public final class DBmanager {
 			"VALUES (?,?,?,?);";
 	private String removePersonSQL="DELETE FROM Persons where pesel=?;";
 	private String getAllPersonsSQL="SELECT * from Persons;";
-	private String showPassengersSQL="SELECT m.*"+
-									"FROM persons as m, planes_has_persons as php"+
-									"WHERE m.id =php.person_id"+
+	private String showPassengersSQL="SELECT m.* "+
+									"FROM persons as m, planes_has_persons as php "+
+									"WHERE m.id =php.person_id "+
 									"AND php.plane_id=?;";
 	
 	//statementy planes
@@ -280,7 +280,8 @@ public final class DBmanager {
 		return false;
 	}
 	
-	public boolean showPassengers(Plane obj) throws SQLException{
+	public List<Person> showPassengers(Plane obj) throws SQLException{
+		List <Person> persons=new ArrayList<Person>();
 		ResultSet rs2=getAll.executeQuery();
 		int plane_id=99;
 		while(rs2.next())
@@ -290,7 +291,14 @@ public final class DBmanager {
 			break;}
 		}
 		showPassengers.setInt(1, plane_id);
-		return showPassengers.execute();
+		ResultSet rs=showPassengers.executeQuery();
+		while(rs.next())
+		{
+		Person p = new Person(rs.getString("firstname"), rs.getString("lastname"),rs.getInt("pesel"),rs.getString("additionalinfo"));
+		persons.add(p);
+		}
+		
+		return persons;
 	}
 	
 	//person
