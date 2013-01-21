@@ -1,0 +1,15 @@
+Aplikacja Airport Management pozwala na:
+-przechowywanie listy osob, samolotow oraz pasazerow tych samolotow
+ w bazie danych.
+-obluge formularzy dodajacych oraz usuwajacych z bazy osoby, samoloty, pasazerow.
+-wyswietlanie stanow dla kazdej z tabel.
+-walidacje wprowadzanych danych
+
+Wszystko odbywa sie za pomoca przejrzystego i intuicyjnego interfejsu webowego.
+Na dodatek zostaly jeszcze zaimplementowane funkcje dodajace przykladowe
+dane do tabel. Czytnik rss zapewni nam dostep do swiezych informacji. Pomocne linki
+pomoga nam w szybkiej nawigacji do stron partnerow. Dostepny kalendarz pozwala na
+sprawdzenie aktualnej daty i nie tylko.
+
+
+
